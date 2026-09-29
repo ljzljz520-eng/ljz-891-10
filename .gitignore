@@ -23,3 +23,10 @@ __pycache__/
 *.log
 .env
 .env.*
+
+# Local application data
+/config.local.php
+/data/*.sqlite
+/data/*.sqlite-shm
+/data/*.sqlite-wal
+/data/mail.log
