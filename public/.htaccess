@@ -1,0 +1,8 @@
+Options -Indexes
+DirectoryIndex index.php
+
+# 简单安全头（如服务器允许）
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "DENY"
+</IfModule>

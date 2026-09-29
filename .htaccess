@@ -1,0 +1,14 @@
+# Apache 部署：把所有请求转到 public/（项目根目录作为 DocumentRoot 时使用）
+RewriteEngine On
+
+# 禁止直接访问数据目录与应用源码
+RewriteRule ^(data|app)/ - [F,L]
+
+# 已存在的静态文件直接响应
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
+RewriteRule ^(.*)$ public/$1 [L]
+
+# 其余请求交给 public
+RewriteRule ^(.*)$ public/$1 [L]
+
+Options -Indexes
